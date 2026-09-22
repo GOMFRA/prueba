@@ -1,0 +1,1223 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Flores Amarillas Para Ti</title>
+
+<style>
+
+/* =====================================================
+   CONFIGURACION GENERAL
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+    font-family: Georgia, "Times New Roman", serif;
+    background: #080714;
+    color: white;
+}
+
+
+/* =====================================================
+   FONDO
+===================================================== */
+
+.fondo {
+    position: fixed;
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at 50% 40%,
+            #211a35 0%,
+            #100d20 45%,
+            #05050c 100%
+        );
+
+    z-index: -5;
+}
+
+.brillo-fondo {
+    position: fixed;
+    width: 500px;
+    height: 500px;
+
+    left: 50%;
+    top: 45%;
+
+    transform: translate(-50%, -50%);
+
+    background: rgba(255, 211, 55, 0.06);
+
+    filter: blur(80px);
+
+    border-radius: 50%;
+
+    z-index: -4;
+}
+
+
+/* =====================================================
+   ESTRELLAS
+===================================================== */
+
+.estrellas {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -2;
+}
+
+.estrella {
+    position: absolute;
+
+    width: 3px;
+    height: 3px;
+
+    background: white;
+
+    border-radius: 50%;
+
+    box-shadow: 0 0 8px white;
+
+    animation: parpadear 2s infinite alternate;
+}
+
+.estrella:nth-child(1) {
+    left: 10%;
+    top: 20%;
+}
+
+.estrella:nth-child(2) {
+    left: 20%;
+    top: 70%;
+    animation-delay: .5s;
+}
+
+.estrella:nth-child(3) {
+    left: 75%;
+    top: 15%;
+    animation-delay: 1s;
+}
+
+.estrella:nth-child(4) {
+    left: 88%;
+    top: 65%;
+    animation-delay: .3s;
+}
+
+.estrella:nth-child(5) {
+    left: 55%;
+    top: 10%;
+    animation-delay: .8s;
+}
+
+.estrella:nth-child(6) {
+    left: 35%;
+    top: 30%;
+    animation-delay: 1.2s;
+}
+
+.estrella:nth-child(7) {
+    left: 90%;
+    top: 35%;
+    animation-delay: .6s;
+}
+
+@keyframes parpadear {
+
+    from {
+        opacity: .2;
+        transform: scale(.6);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1.4);
+    }
+
+}
+
+
+/* =====================================================
+   TARJETA PRINCIPAL
+===================================================== */
+
+.pantalla-regalo {
+
+    position: absolute;
+
+    width: min(90%, 650px);
+    min-height: 90vh;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 45px 25px;
+
+    border: 1px solid rgba(255, 220, 100, .25);
+
+    border-radius: 35px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(35, 30, 55, .95),
+            rgba(13, 12, 27, .96)
+        );
+
+    box-shadow:
+        0 0 40px rgba(0,0,0,.5),
+        inset 0 0 30px rgba(255,255,255,.025);
+
+    transition:
+        opacity 1s ease,
+        transform 1s ease;
+
+}
+
+
+/* =====================================================
+   TITULO
+===================================================== */
+
+.titulo {
+
+    text-align: center;
+
+    color: #ffe9a0;
+
+    font-size: clamp(32px, 7vw, 52px);
+
+    line-height: 1;
+
+    text-shadow:
+        0 0 5px rgba(255,220,100,.6),
+        0 0 20px rgba(255,190,40,.3);
+
+    margin-bottom: 12px;
+
+}
+
+.subtitulo {
+
+    color: #fff4c9;
+
+    font-size: clamp(18px, 4vw, 25px);
+
+    text-align: center;
+
+    margin-bottom: 25px;
+
+}
+
+
+/* =====================================================
+   FLORES
+===================================================== */
+
+.flores {
+
+    width: 100%;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 0 20px;
+
+    margin: 15px 0 25px;
+
+}
+
+.flor {
+
+    position: relative;
+
+    width: 75px;
+    height: 75px;
+
+    animation: moverFlor 3s ease-in-out infinite;
+
+}
+
+.flor:nth-child(2) {
+    animation-delay: 1s;
+}
+
+
+/* Petalos */
+
+.petalo {
+
+    position: absolute;
+
+    width: 28px;
+    height: 38px;
+
+    background: #ffd92f;
+
+    border-radius: 50%;
+
+    left: 24px;
+    top: 18px;
+
+    box-shadow:
+        0 0 12px rgba(255,215,40,.6);
+
+}
+
+.petalo:nth-child(1) {
+    transform: translateY(-17px);
+}
+
+.petalo:nth-child(2) {
+    transform: rotate(45deg) translateY(-17px);
+}
+
+.petalo:nth-child(3) {
+    transform: rotate(90deg) translateY(-17px);
+}
+
+.petalo:nth-child(4) {
+    transform: rotate(135deg) translateY(-17px);
+}
+
+.petalo:nth-child(5) {
+    transform: rotate(180deg) translateY(-17px);
+}
+
+.petalo:nth-child(6) {
+    transform: rotate(225deg) translateY(-17px);
+}
+
+.petalo:nth-child(7) {
+    transform: rotate(270deg) translateY(-17px);
+}
+
+.petalo:nth-child(8) {
+    transform: rotate(315deg) translateY(-17px);
+}
+
+
+/* Centro */
+
+.centro-flor {
+
+    position: absolute;
+
+    width: 25px;
+    height: 25px;
+
+    background: #542500;
+
+    border-radius: 50%;
+
+    left: 25px;
+    top: 25px;
+
+    box-shadow:
+        inset 0 0 0 5px #8b4100,
+        0 0 10px rgba(0,0,0,.5);
+
+}
+
+@keyframes moverFlor {
+
+    0%,100% {
+        transform: rotate(-3deg);
+    }
+
+    50% {
+        transform: rotate(3deg) translateY(-5px);
+    }
+
+}
+
+
+/* =====================================================
+   OSITOS
+===================================================== */
+
+.ositos {
+
+    position: relative;
+
+    height: 190px;
+
+    width: 300px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: flex-end;
+
+    margin-bottom: 20px;
+
+}
+
+
+/* Osito */
+
+.osito {
+
+    position: relative;
+
+    width: 115px;
+    height: 125px;
+
+    border-radius: 50% 50% 45% 45%;
+
+}
+
+.osito.blanco {
+
+    background: #fff;
+
+    margin-right: -15px;
+
+    z-index: 2;
+
+}
+
+.osito.cafe {
+
+    background: #c8894d;
+
+    margin-left: -15px;
+
+}
+
+
+/* Orejas */
+
+.oreja {
+
+    position: absolute;
+
+    width: 38px;
+    height: 38px;
+
+    border-radius: 50%;
+
+    top: -12px;
+
+}
+
+.blanco .oreja {
+    background: white;
+}
+
+.cafe .oreja {
+    background: #c8894d;
+}
+
+.oreja.izq {
+    left: 5px;
+}
+
+.oreja.der {
+    right: 5px;
+}
+
+
+/* Cara */
+
+.ojo {
+
+    position: absolute;
+
+    width: 7px;
+    height: 10px;
+
+    background: #28202a;
+
+    border-radius: 50%;
+
+    top: 48px;
+
+}
+
+.ojo.izq {
+    left: 37px;
+}
+
+.ojo.der {
+    right: 37px;
+}
+
+
+/* Hocico */
+
+.hocico {
+
+    position: absolute;
+
+    width: 32px;
+    height: 25px;
+
+    border-radius: 50%;
+
+    background: #ffe1df;
+
+    left: 50%;
+    top: 59px;
+
+    transform: translateX(-50%);
+
+}
+
+.nariz {
+
+    position: absolute;
+
+    width: 8px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: #333;
+
+    left: 50%;
+    top: 6px;
+
+    transform: translateX(-50%);
+
+}
+
+
+/* Brazo */
+
+.brazo {
+
+    position: absolute;
+
+    width: 75px;
+    height: 30px;
+
+    border-radius: 30px;
+
+    background: inherit;
+
+    top: 80px;
+
+    right: -35px;
+
+    transform: rotate(-10deg);
+
+}
+
+
+/* =====================================================
+   CORAZONES PEQUEÑOS
+===================================================== */
+
+.corazon-pequeno {
+
+    position: absolute;
+
+    color: #ff6682;
+
+    font-size: 35px;
+
+    filter:
+        drop-shadow(0 0 10px #ff1744);
+
+    animation:
+        subirCorazon 3s ease-in-out infinite;
+
+}
+
+.corazon1 {
+    top: 0;
+    left: 70px;
+}
+
+.corazon2 {
+    top: 20px;
+    right: 65px;
+
+    animation-delay: 1s;
+}
+
+@keyframes subirCorazon {
+
+    0%,100% {
+        transform: translateY(5px) scale(.9);
+        opacity: .7;
+    }
+
+    50% {
+        transform: translateY(-12px) scale(1.1);
+        opacity: 1;
+    }
+
+}
+
+
+/* =====================================================
+   MENSAJE
+===================================================== */
+
+.mensaje {
+
+    text-align: center;
+
+    max-width: 520px;
+
+    color: #fff4d0;
+
+    font-size: clamp(18px, 4vw, 25px);
+
+    line-height: 1.4;
+
+    margin: 5px 0 30px;
+
+}
+
+
+/* =====================================================
+   BOTON
+===================================================== */
+
+.boton {
+
+    border: none;
+
+    padding: 18px 55px;
+
+    border-radius: 50px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff000,
+            #ffb300
+        );
+
+    color: #422800;
+
+    font-weight: bold;
+
+    font-size: 16px;
+
+    letter-spacing: 3px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 0 15px rgba(255,200,0,.5),
+        0 0 35px rgba(255,180,0,.2);
+
+    transition: .3s;
+
+}
+
+.boton:hover {
+
+    transform: scale(1.05);
+
+    box-shadow:
+        0 0 25px rgba(255,220,50,.8),
+        0 0 50px rgba(255,180,0,.4);
+
+}
+
+.boton:active {
+
+    transform: scale(.96);
+
+}
+
+
+
+<!-- =====================================================
+     SEGUNDA PANTALLA
+===================================================== -->
+
+<section class="pantalla-corazon">
+
+    <div class="corazon-real">
+
+        <svg viewBox="0 0 512 512">
+
+            <defs>
+
+                <radialGradient
+                    id="gradienteCorazon"
+                    cx="50%"
+                    cy="40%"
+                    r="65%">
+
+                    <stop
+                        offset="0%"
+                        stop-color="#ff7188"/>
+
+                    <stop
+                        offset="45%"
+                        stop-color="#ff1744"/>
+
+                    <stop
+                        offset="100%"
+                        stop-color="#c90032"/>
+
+                </radialGradient>
+
+                <filter
+                    id="brilloCorazon"
+                    x="-50%"
+                    y="-50%"
+                    width="200%"
+                    height="200%">
+
+                    <feGaussianBlur
+                        stdDeviation="10"
+                        result="blur"/>
+
+                    <feMerge>
+
+                        <feMergeNode in="blur"/>
+
+                        <feMergeNode in="SourceGraphic"/>
+
+                    </feMerge>
+
+                </filter>
+
+            </defs>
+
+
+            <!-- Brillo exterior -->
+
+            <path
+                class="corazon-brillo-svg"
+                d="M256 464
+                   C230 440 80 330 50 210
+                   C25 110 85 45 160 45
+                   C205 45 238 70 256 105
+                   C274 70 307 45 352 45
+                   C427 45 487 110 462 210
+                   C432 330 282 440 256 464Z"/>
+
+
+            <!-- Corazon principal -->
+
+            <path
+                class="corazon-relleno-svg"
+                d="M256 464
+                   C230 440 80 330 50 210
+                   C25 110 85 45 160 45
+                   C205 45 238 70 256 105
+                   C274 70 307 45 352 45
+                   C427 45 487 110 462 210
+                   C432 330 282 440 256 464Z"/>
+
+
+            <!-- Brillo interior -->
+
+            <ellipse
+                class="brillo-interior"
+                cx="180"
+                cy="145"
+                rx="45"
+                ry="25"/>
+
+        </svg>
+
+    </div>
+
+
+    <div class="texto-final">
+
+        Para ti ❤️
+
+        <small>
+            Con todo mi cariño
+        </small>
+
+    </div>
+
+</section>
+
+
+/* Relleno */
+
+.corazon-centro {
+
+    position: absolute;
+
+    width: 70%;
+
+    height: 70%;
+
+    left: 15%;
+
+    top: 15%;
+
+    background:
+        radial-gradient(
+            circle,
+            #ff6680 0%,
+            #ff1744 55%,
+            #d50035 100%
+        );
+
+    z-index: 3;
+
+}
+
+
+/* Cuadrado central */
+
+.corazon-grande {
+
+    background: #ff1744;
+
+}
+
+
+/* Brillo interior */
+
+.corazon-brillo {
+
+    position: absolute;
+
+    z-index: 5;
+
+    width: 22%;
+
+    height: 22%;
+
+    background: rgba(255,255,255,.45);
+
+    border-radius: 50%;
+
+    left: 22%;
+
+    top: 20%;
+
+    filter: blur(4px);
+
+    transform: rotate(45deg);
+
+}
+
+
+/* Animacion de latido */
+
+@keyframes latido {
+
+    0% {
+        transform: rotate(-45deg) scale(1);
+    }
+
+    15% {
+        transform: rotate(-45deg) scale(1.08);
+    }
+
+    30% {
+        transform: rotate(-45deg) scale(1);
+    }
+
+    45% {
+        transform: rotate(-45deg) scale(1.05);
+    }
+
+    65% {
+        transform: rotate(-45deg) scale(1);
+    }
+
+    100% {
+        transform: rotate(-45deg) scale(1);
+    }
+
+}
+
+
+/* =====================================================
+   TEXTO FINAL
+===================================================== */
+
+.texto-final {
+
+    margin-top: 45px;
+
+    text-align: center;
+
+    color: #ffd9df;
+
+    font-size: clamp(24px, 5vw, 38px);
+
+    text-shadow:
+        0 0 10px #ff1744,
+        0 0 25px rgba(255,0,50,.5);
+
+    animation: aparecerTexto 2s ease forwards;
+
+}
+
+.texto-final small {
+
+    display: block;
+
+    margin-top: 12px;
+
+    font-size: 16px;
+
+    color: #fff;
+
+    opacity: .8;
+
+}
+
+@keyframes aparecerTexto {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =====================================================
+   RESPONSIVE PARA CELULAR
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .pantalla-regalo {
+
+        min-height: 92vh;
+
+        padding:
+            35px
+            18px;
+
+    }
+
+    .flores {
+
+        padding: 0 5px;
+
+    }
+
+    .flor {
+
+        transform: scale(.8);
+
+    }
+
+    .ositos {
+
+        transform: scale(.85);
+
+        margin-top: -5px;
+
+    }
+
+    .mensaje {
+
+        margin-top: -5px;
+
+    }
+
+    .boton {
+
+        padding: 17px 35px;
+
+        font-size: 14px;
+
+    }
+
+}
+
+
+/* =====================================================
+   PARTICULAS
+===================================================== */
+
+.particula {
+
+    position: fixed;
+
+    width: 4px;
+    height: 4px;
+
+    background: #ffd83d;
+
+    border-radius: 50%;
+
+    box-shadow: 0 0 10px #ffd83d;
+
+    animation: flotar 5s linear infinite;
+
+    opacity: .7;
+
+}
+
+@keyframes flotar {
+
+    from {
+        transform:
+            translateY(100vh)
+            scale(.3);
+
+        opacity: 0;
+    }
+
+    20% {
+        opacity: .8;
+    }
+
+    to {
+        transform:
+            translateY(-10vh)
+            scale(1);
+
+        opacity: 0;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+<!-- =====================================================
+     FONDO
+===================================================== -->
+
+<div class="fondo"></div>
+<div class="brillo-fondo"></div>
+
+
+<div class="estrellas">
+
+    <div class="estrella"></div>
+    <div class="estrella"></div>
+    <div class="estrella"></div>
+    <div class="estrella"></div>
+    <div class="estrella"></div>
+    <div class="estrella"></div>
+    <div class="estrella"></div>
+
+</div>
+
+
+<!-- =====================================================
+     PARTICULAS
+===================================================== -->
+
+<div class="particula" style="left:8%; animation-delay:0s;"></div>
+<div class="particula" style="left:20%; animation-delay:2s;"></div>
+<div class="particula" style="left:35%; animation-delay:4s;"></div>
+<div class="particula" style="left:60%; animation-delay:1s;"></div>
+<div class="particula" style="left:75%; animation-delay:3s;"></div>
+<div class="particula" style="left:90%; animation-delay:2.5s;"></div>
+
+
+<!-- =====================================================
+     PRIMERA PANTALLA
+===================================================== -->
+
+<section class="pantalla-regalo">
+
+    <h1 class="titulo">
+        Flores Amarillas
+    </h1>
+
+    <h2 class="subtitulo">
+        Para Ti
+    </h2>
+
+
+    <!-- FLORES -->
+
+    <div class="flores">
+
+        <div class="flor">
+
+            <div class="petalo"></div>
+            <div class="petalo"></div>
+            <div class="petalo"></div>
+            <div class="petalo"></div>
+            <div class="petalo"></div>
+            <div class="petalo"></div>
+            <div class="petalo"></div>
+            <div class="petalo"></div>
+
+            <div class="centro-flor"></div>
+
+        </div>
+
+
+        <div class="flor">
+
+            <div class="petalo"></div>
+            <div class="petalo"></div>
+            <div class="petalo"></div>
+            <div class="petalo"></div>
+            <div class="petalo"></div>
+            <div class="petalo"></div>
+            <div class="petalo"></div>
+            <div class="petalo"></div>
+
+            <div class="centro-flor"></div>
+
+        </div>
+
+    </div>
+
+
+    <!-- OSITOS -->
+
+    <div class="ositos">
+
+        <div class="corazon-pequeno corazon1">
+            ♥
+        </div>
+
+        <div class="corazon-pequeno corazon2">
+            ♥
+        </div>
+
+
+        <!-- OSITO BLANCO -->
+
+        <div class="osito blanco">
+
+            <div class="oreja izq"></div>
+            <div class="oreja der"></div>
+
+            <div class="ojo izq"></div>
+            <div class="ojo der"></div>
+
+            <div class="hocico">
+                <div class="nariz"></div>
+            </div>
+
+            <div class="brazo"></div>
+
+        </div>
+
+
+        <!-- OSITO CAFE -->
+
+        <div class="osito cafe">
+
+            <div class="oreja izq"></div>
+            <div class="oreja der"></div>
+
+            <div class="ojo izq"></div>
+            <div class="ojo der"></div>
+
+            <div class="hocico">
+                <div class="nariz"></div>
+            </div>
+
+            <div class="brazo"></div>
+
+        </div>
+
+    </div>
+
+
+    <!-- MENSAJE -->
+
+    <p class="mensaje">
+
+        Hoy mi universo florece en amarillo
+        <br>
+        por ti 💛
+
+    </p>
+
+
+    <!-- BOTON -->
+
+    <button
+        class="boton"
+        onclick="abrirRegalo()">
+
+        ABRIR MI REGALO
+
+    </button>
+
+</section>
+
+
+
+<!-- =====================================================
+     SEGUNDA PANTALLA
+===================================================== -->
+
+<section class="pantalla-corazon">
+
+
+    <div class="corazon-grande">
+
+        <div class="corazon-centro"></div>
+
+        <div class="corazon-brillo"></div>
+
+    </div>
+
+
+    <div class="texto-final">
+
+        Para ti ❤️
+
+        <small>
+            Con todo mi cariño
+        </small>
+
+    </div>
+
+</section>
+
+
+
+<script>
+
+/* =====================================================
+   ABRIR REGALO
+===================================================== */
+
+function abrirRegalo() {
+
+    document.body.classList.add("abierto");
+
+}
+
+</script>
+
+
+</body>
+</html>
